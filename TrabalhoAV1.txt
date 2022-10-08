@@ -1,0 +1,109 @@
+#Tendo como dado de entrada a altura (h) de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas: 
+#a. Para homens: (72.7*h) - 58 
+#b. Para mulheres: (62.1*h) - 44.7
+sexo = int(input('Escolha: 1- Sexo Masculino / 2- Sexo Feminino: '))
+h = float(input('Altura:'))
+peso = float(input('Peso:'))
+
+peso_ideal = (72.7*h) - 58 if sexo == 1 else (62.1*h) - 44.7
+
+if peso < peso_ideal:
+	print('Abaixo do peso ideal!')
+elif peso == peso_ideal:
+	print('Dentro do peso ideal!')
+else:
+	print('Acima do peso ideal!')
+print ('Peso: %.2f / Peso ideal: %.2f' %(peso, peso_ideal))
+
+#Primeiramente realizei o código input com o int para o usuário definir com número inteiro: 1 sexo masculino ou 2 feminino. Para armazenar a informação da altura e peso que são números decimais, utilizei a função float com o input para o usuário colocar seus respectivos dados. Após isso, coloquei o peso ideal dos sexos em uma variável e com os comandos condicionais if/elif/else fui moldurando se os pesos seriam maiores que os ideais, iguais, ou menores que, utilizando os operadores relacionais. Depois foi só utilizar a função print + os operadores aritméticos para imprimir na tela os resultados.
+
+
+
+
+
+
+#Faça um programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00. Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.
+tamanho = float(input('Quantos metros quadrados devem ser pintados: '))
+
+litros = tamanho / 3.0
+latas = int(litros / 18.0)
+if litros % 18 != 0:
+    latas += 1
+
+print('Voce deverá comprar', latas, 'latas.')
+print('O valor total é:', latas * 80 , "reais.")
+
+#float + input para o usuário preencher o tamanho da área a ser pintada. Criei a variável litros que recebe o tamanho da área dividido por 3, que é cada metro quadrado. A variável latas recebe o tamanho dividido por 18, que é a quantidade de litros da lata. E por fim, utilizei o comando condicional e o aritmético para realizar a operação que encontrasse a quantidade de latas que o usuário precisaria e com a função print imprimir o número de latas vezes 80 para descobrir o valor total que o usuário deverá pagar.
+
+
+
+
+
+
+
+#Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
+tamanho = float(input('Tamanho do arquivo (MB): '))
+velocidade = float(input('Velocidade de Internet (MBps): '))
+print('Tempo aproximado de download: %.0f Minutos ' %((tamanho / velocidade) * 60))
+
+#Utilizei a variavel tamanho recebe float + input para o usuário definir o tamanho do arquivo. Em seguida, a variavel velocidade com a mesma operação de cima para encontar a velocidade da internet. Para finalizar, usei a função print para revelar o tempo aproximado de download que seria o tamanho do arquivo dividido pela velocidade de um link pela internet vezes 60. Imprimindo o resultado na tela.
+
+
+
+
+
+
+#Faça um Programa que peça um número inteiro e determine se ele é par ou ímpar.
+numero = int(input('Digite um inteiro: '))
+if numero%2 == 0:
+    print("O número é par")
+else:
+    print("O número é ímpar")
+
+#A variavel numero recebe o int e o input para que o usuário defina o número inteiro. Após isso, se resto da divisão por 2 resultar 0, a função print imprime que o número é par. Se não resultar 0, a função imprime que o número é ímpar.
+
+
+
+
+
+
+#Faça um Programa que peça um número e informe se o número é inteiro ou decimal.
+numero = float(input("Digite um número:"))
+if (numero %1) == 0:
+  print("O número é inteiro")
+else:
+ print("O número é decimal")
+
+#A variável numero recebe o float e input interagindo com o usuário para que ele digite um número. Após isso, utilizei o se o resto da divisão por 1 resultar 0, a função print abaixo imprime na tela que o número é inteiro. Se não restar 1, a função print imprime que o número é decimal.
+
+
+
+
+
+#Faça um Programa que peça a idade e a altura de 5 pessoas, armazene cada informação no seu respectivo índice. Imprima a idade e a altura na ordem inversa a ordem lida.
+idades = []
+alturas = []
+for i in range(1, 6):
+    print('%dº Pessoa' %i)
+    idade = int(input('Digite a idade: '))
+    altura = float(input('Digite a altura: '))
+    idades.append(idade)
+    alturas.append(altura)
+
+print('Ordem inversa:')
+print('Alturas')
+print(alturas[::-1])
+print('Idades')
+print(idades[::-1])
+
+print('Ordem lida')
+print('Alturas')
+print(alturas)
+
+print('Idades')
+print(idades)
+
+
+#Utilizei a função range para gerar os números entre 1 e 6, print com a posição referente a pessoa. A idade com int e input porque é número inteiro e o float na altura para os números decimais. Utilizei o append para adicionar ao final as alturas e as idades de acordo com a ordem lida e depois utilizei a função print para imprimir a ordem inversa das alturas e as idades.
+
+
